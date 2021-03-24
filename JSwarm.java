@@ -29,6 +29,7 @@ public class JSwarm {
     System.out.println("kr:"+system._kr);
     System.out.println("pc:"+system._pc);
     System.out.println("pr:"+system._pr);
+    System.out.println("perim_coord:"+system._perimCoord);
     System.out.println("Speed:"+system._speed);
     for(int i = 0; i < iterations; i++) {
       system.update();

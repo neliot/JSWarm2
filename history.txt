@@ -1,0 +1,171 @@
+/**************************************************
+ * PSwarm
+ **************************************************
+ * 07/2020 v 0.0.1
+ **************************************************
+ * Initial Build
+ **************************************************
+ * 06/07/2020 - NE
+ **************************************************
+ * 1. Added centroid display to simulation
+ * 2. Refactored code
+ * 3. Added snapshot save and load (to single life) 
+ **************************************************
+ * 07/07/2020 - NE
+ **************************************************
+ * 1. Adjusted tolerance levels (_topspeed) and 
+ *    added annotaions to tunable parameters. 
+ * 2. Converted destination to left mouse click for
+ *    on/off and location.
+ **************************************************
+ * 18/09/2020 - NE
+ **************************************************
+ * 1. Moved all graphics into main body of 
+ *    application.
+ * 2. Refactored PSystem and Particle to be model 
+ *    only.
+ **************************************************
+ * 22/09/2020 - NE
+ **************************************************
+ * 1. Updated model (refactored and updated) to be  
+ *    inline with Python model by removing a 
+ *    normalisation stage.
+ * 2. Changed swarm creation to be in the centre 
+ *    of screen (quartile).
+ * 3. Removed physics type calculations replaced 
+ *    vector caluclations and summing to a 
+ *    resultant change.
+ * 4. Added a params file (params.txt). If present 
+ *    the default parameters in the application are
+ *    overridden. (useful for command line running)
+ *    simply adding a Y/N to the first line 
+ *    controls its usage
+ **************************************************
+ * 30/10/2020 - NE
+ **************************************************
+ * 1. Fixed scalling and offsetting for positioning
+ *    destination.
+ * 2. Added mouse over agent information when 
+ *    simulation is stopped.  
+ ************************************************** 
+ * 02/11/2020 - 0.1.0 - NE
+ **************************************************
+ * 1. Refactored to use ArrayList for agents
+ * 2. Added create agent with L Mouse
+ **************************************************
+ * 20/11/2020 - 0.1.0 - NE
+ **************************************************
+ * 1. Refactored to use ArrayList for D
+ * 2. Added info screens for agents and D
+ * 3. Added add destination, delete destination 
+ * 4. Added delete agent with R Mouse
+ * 5. Added "modes" for editing context
+ * 6. Added Obstacle class needs integrated!
+ **************************************************
+ * 21/11/2020 - 0.1.0 - NE
+ **************************************************
+ * 1. Added Obstacles
+ **************************************************
+ * 27/11/2020 - 0.1.1 - NE
+ **************************************************
+ * 1. Added Generic direction clock?
+ * 2. Refactored PSyetm to allow extends to add 
+ *    additional models
+ **************************************************
+* 30/11/2020 - 0.1.1 - NE
+ **************************************************
+ * 1. Added Generic infoBox class to display
+ **************************************************
+ * 03/12/2020 - 0.1.1 - NE
+ **************************************************
+ * 1. Added themes framework activated with 0 key
+ **************************************************
+ * 03/12/2020 - 0.1.2 - NE
+ **************************************************
+ * 1. Updated load and save experiment to include
+ *    Agents, Destinations, Objects and systemwide
+ *    parameters.
+ * 2. Added polymorphic access to muliple models
+ **************************************************
+ * 15/12/2020 - 0.1.2 - NE
+ **************************************************
+ * 1. Added Properties support for system 
+ *    parameters. 
+ **************************************************
+ * 16/12/2020 - 0.1.3 - NE
+ **************************************************
+ * 1. Modify Destination storage. Destinations are 
+ *    stored globally in PSystem and in
+ *    particle as a list of localised destination 
+ *    attractors. (allows agents to be independant)
+ **************************************************
+ * 20/12/2020 - 0.1.3 - NE
+ **************************************************
+ * 1. Split data logging and saving/loading by 
+ *    Model.
+ * 2. Added movable window minimise and restore.
+ **************************************************
+ * 24/12/2020 - 0.1.4 - NE
+ **************************************************
+ * 1. Refactored properties into Models
+ * 2. Added screen selection/span to application 
+ *    properties. 
+ * 3. Added frameRate to application properties.
+ **************************************************
+ * 27/12/2020 - 0.1.4 - NE
+ **************************************************
+ * 1. Refactored Objects and PSwarm.pde.
+ **************************************************
+ * 27/12/2020 - 0.1.4 - NE
+ **************************************************
+ * 1. Added Model7 - Void Reduction. :-)
+ **************************************************
+ * 07/01/2021 - 0.1.4 - NE
+ **************************************************
+ * 1. Added Model8 - Linear Model + stabaliseRange
+ * 2. Added stabaliseRange to Model8.properties to
+ *    allow an additional "field effect" where an
+ *    agent does not apply cohesion in an attempt
+ *    to stabalise the swarms "jitter".
+ **************************************************
+ * 13/01/2021 - 0.1.5 - NE
+ **************************************************
+ * 1. Added Middle mouse button functionality.
+ *    i.  Middle pressed pan 
+ *    ii. Middle scroll zoom +/-
+ * 2. Finalised Obstacle linked repulsion.
+ **************************************************
+ * 18/01/2021 - 0.1.5 - NE
+ **************************************************
+ * 1. Added 3D Perspective rendering via 
+ *    application.properties
+ **************************************************
+ * 20/01/2021 - 0.1.5 - NE
+ **************************************************
+ * 1. Fixed issue with boundary detection of linked
+ *    Obstacles
+ **************************************************
+ * 01/02/2021 - 0.1.5 - NE
+ **************************************************
+ * 1. infoBox now autosizes height and width based 
+ *    on content.
+ **************************************************
+ * 15/02/2021 - 0.1.6 - NE
+ **************************************************
+ * 1. Converted import/export to JSON format.
+ **************************************************
+ * 16/02/2021 - 0.1.6 - NE
+ **************************************************
+ * 1. Removed "props" from JSON to make compatible 
+ * with Python simulator. (Global settings (params)
+ * added to imported objects)
+ **************************************************
+ * 17/02/2021 - 0.1.6 - NE
+ **************************************************
+ * 1. Added offset and scaling to properties for
+ *    compatibility with Python simulator
+ **************************************************
+  * 17/02/2021 - 0.1.6 - NE
+ **************************************************
+ * 1. Converted to Java based CLI
+ **************************************************//

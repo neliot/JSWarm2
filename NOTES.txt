@@ -1,0 +1,6 @@
+TO COMPILE
+javac -cp .\lib\org.json.jar PNRG.java PVectorD.java Particle.java Obstacle.java Destination.java Logger.java JSwarm.java PSystem.java
+
+TO RUN
+Linux -  java -cp ".:.\lib\org.json.jar" JSwarm
+Windows -  java -cp ".;.\lib\org.json.jar" JSwarm
